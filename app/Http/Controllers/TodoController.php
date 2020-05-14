@@ -55,7 +55,7 @@ class TodoController extends Controller
         // dd($this->todo->fill($input));
         $this->todo->fill($input)->save();
         // dd($this->todo->fill($input));
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
@@ -99,7 +99,7 @@ class TodoController extends Controller
         // dd($input);
         // dd($this->todo->find($id)->fill($input));
         $this->todo->find($id)->fill($input)->save();
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
@@ -113,6 +113,6 @@ class TodoController extends Controller
         // dd($this->todo->find($id));
         // dd($this->todo->find($id)->delete());
         $this->todo->find($id)->delete();
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 }
